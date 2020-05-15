@@ -1,0 +1,21 @@
+.header {
+    background-color: var(--light);
+    padding: 2rem 0;
+    li {
+        &::after {
+            content: '|';
+            margin-left: 4rem;
+        }
+        &:nth-child(4),
+        &:nth-child(5) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .cart {
+        background-color: var(--primary);
+        color: #fff;
+        padding: 1rem 2rem;
+    }
+}

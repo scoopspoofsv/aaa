@@ -1,0 +1,20 @@
+<main>
+    <div class="header" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4rem">
+        <h2>Welcome to our eCommCart!</h2>
+        <div class="search" fxLayout="row" fxLayoutGap="2rem">
+            <input type="text" [(ngModel)]="listFilter" fxFlex="35rem" placeholder="Search...">
+            <a class="submit" fxFlex="15rem">Submit</a>
+        </div>
+    </div>
+    <div class="container">
+        <ul *ngFor="let product of filteredProducts">
+            <li>
+                <img [src]="product.imageUrl" [title]="product.productName" [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
+            </li>
+            <li>
+                <h3>{{ product.productName }}</h3>
+                <p>{{ product.price | currency:'USD':'symbol':'2.2-2'}}</p>
+            </li>
+        </ul>
+    </div>
+</main>
