@@ -7,13 +7,15 @@
         </div>
     </div>
     <div class="container">
-        <ul *ngFor="let product of filteredProducts">
-            <li>
-                <img [src]="product.imageUrl" [title]="product.productName" [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
-            </li>
-            <li>
-                <h3>{{ product.productName }}</h3>
-                <p>{{ product.price | currency:'USD':'symbol':'2.2-2'}}</p>
+        <h2>Product Listing</h2>
+        <ul fxLayout="row wrap" fxLayoutAlign="space-between flex-start">
+            <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}">
+                <img [src]="product.imageUrl" [title]="product.productName">
+                <div class="description">
+                    <h3><a [routerLink]="['/products',product.productId]">{{ product.productName }}</a></h3>
+                    <app-star [rating]="product.starRating"></app-star>
+                    <p>{{ product.price | currency:'USD':'symbol':'2.2'}}</p>
+                </div>
             </li>
         </ul>
     </div>

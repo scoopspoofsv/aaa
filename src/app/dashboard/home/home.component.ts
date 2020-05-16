@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Products } from '../../common/interfaces/products';
-import { ProductsService } from '../../common/services/products.service';
+import { Component, OnInit } from "@angular/core";
+import * as data from "../../api/products/products.json";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
 
-  pageTitle: string = 'Products List';
-  imageWidth: number = 50;
-  imageMargin: number = 2;
-  showImage: boolean = false;
-  errorMessage: string;
-  filteredProducts: Products[];
+  products: any = (data as any).default;
+  filteredProducts: any = (data as any).default;
+
 
   _listFilter: string;
   get listFilter(): string {
@@ -26,24 +22,15 @@ export class HomeComponent implements OnInit {
     this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
   }
 
-  products: Products[]= [];
-
-  constructor(private productService : ProductsService) { }
-
-  performFilter(filterBy: string): Products[] {
+  performFilter(filterBy: string): any[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.products.filter((product: Products) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.products.filter((product: any) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe({
 
-      next: products => {
-        this.products = products
-        this.filteredProducts = this.products;
-      },
-      error: err => this.errorMessage = err
-    });
+  constructor() {}
+
+  ngOnInit() {
+    console.log(data);
   }
-
 }

@@ -6,10 +6,13 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { StarComponent } from 'src/app/common/components/star/star.component';
+import { ProductDetailComponent } from 'src/app/common/components/product-detail/product-detail.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent,
+  StarComponent,ProductDetailComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
