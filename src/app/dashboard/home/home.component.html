@@ -12,7 +12,7 @@
             <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}">
                 <img [src]="product.imageUrl" [title]="product.productName">
                 <div class="description">
-                    <h3><a [routerLink]="['/products',product.productId]">{{ product.productName }}</a></h3>
+                    <h3><a [routerLink]="['/products/',product.productId]">{{ product.productName }}</a></h3>
                     <app-star [rating]="product.starRating"></app-star>
                     <p>{{ product.price | currency:'USD':'symbol':'2.2'}}</p>
                 </div>

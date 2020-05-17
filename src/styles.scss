@@ -32,3 +32,10 @@ li {
     padding: 0 2rem;
     margin: 0 auto;
 }
+
+.lead {
+    margin-bottom: 2.4rem;
+    &-large {
+        margin-bottom: 4rem;
+    }
+}

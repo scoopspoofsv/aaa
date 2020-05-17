@@ -3,89 +3,260 @@
         "productName": "Leaf Rake",
         "productCode": "GDN-0011",
         "releaseDate": "March 19, 2019",
-        "description": "Leaf rake with 48-inch wooden handle.",
+        "description": "Leaf rake with 48-inch wooden handle. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 19.95,
         "starRating": 3.2,
-        "imageUrl": "assets/images/leaf-rake.jpg"
+        "imageUrl": "assets/images/leaf-rake.jpg",
+        "types": [
+            { "type": "long" },
+            { "type": "short" },
+            { "type": "medium" }
+        ],
+        "reviews": 5,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 2,
         "productName": "Garden Cart",
         "productCode": "GDN-0023",
         "releaseDate": "March 18, 2019",
-        "description": "15 gallon capacity rolling garden cart",
+        "description": "15 gallon capacity rolling garden cart. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 32.99,
         "starRating": 4.2,
-        "imageUrl": "assets/images/garden-cart.jpg"
+        "imageUrl": "assets/images/garden-cart.jpg",
+        "types": [
+            { "type": "big" },
+            { "type": "small" },
+            { "type": "regular" }
+        ],
+        "reviews": 4,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 3,
         "productName": "Cinder Block",
         "productCode": "GDN-0023",
         "releaseDate": "March 18, 2019",
-        "description": "15 gallon capacity rolling garden cart",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 92.12,
         "starRating": 3.5,
-        "imageUrl": "assets/images/cinder-block.jpg"
+        "imageUrl": "assets/images/cinder-block.jpg",
+        "types": [
+            { "type": "commercial" },
+            { "type": "regular" },
+            { "type": "duplicate" }
+        ],
+        "reviews": 3,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 4,
         "productName": "Vase",
         "productCode": "GDN-0023",
         "releaseDate": "March 18, 2019",
-        "description": "15 gallon capacity rolling garden cart",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 12.19,
         "starRating": 4.0,
-        "imageUrl": "assets/images/vase.jpg"
+        "imageUrl": "assets/images/vase.jpg",
+        "types": [
+            { "type": "ceramic" },
+            { "type": "steel" },
+            { "type": "plastic" }
+        ],
+        "reviews": 6,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 5,
         "productName": "Hammer",
         "productCode": "TBX-0048",
         "releaseDate": "May 21, 2019",
-        "description": "Curved claw steel hammer",
+        "description": "Curved claw steel hammer, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 8.9,
         "starRating": 4.8,
-        "imageUrl": "assets/images/hammer.jpg"
+        "imageUrl": "assets/images/hammer.jpg",
+        "types": [
+            { "type": "long" },
+            { "type": "short" },
+            { "type": "medium" }
+        ],
+        "reviews": 6,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 6,
         "productName": "Blanket",
         "productCode": "TBX-0048",
         "releaseDate": "May 21, 2019",
-        "description": "Curved claw steel hammer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 16.2,
         "starRating": 3.0,
-        "imageUrl": "assets/images/blanket.jpg"
+        "imageUrl": "assets/images/blanket.jpg",
+        "types": [
+            { "type": "silk" },
+            { "type": "cotton" },
+            { "type": "synthetic" }
+        ],
+        "reviews": 5,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 7,
         "productName": "Glasses",
         "productCode": "TBX-0048",
         "releaseDate": "May 21, 2019",
-        "description": "Curved claw steel hammer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 12.83,
         "starRating": 4.8,
-        "imageUrl": "assets/images/glasses.jpg"
+        "imageUrl": "assets/images/glasses.jpg",
+        "types": [
+            { "type": "reflectors" },
+            { "type": "protectors" },
+            { "type": "regular" }
+        ],
+        "reviews": 2,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 8,
         "productName": "Saw",
         "productCode": "TBX-0022",
         "releaseDate": "May 15, 2019",
-        "description": "15-inch steel blade hand saw",
+        "description": "15-inch steel blade hand saw, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 11.55,
         "starRating": 3.7,
-        "imageUrl": "assets/images/saw.jpg"
+        "imageUrl": "assets/images/saw.jpg",
+        "types": [
+            { "type": "long" },
+            { "type": "short" },
+            { "type": "medium" }
+        ],
+        "reviews": 3,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     },
     {
         "productId": 9,
         "productName": "chalk",
         "productCode": "TBX-0022",
         "releaseDate": "May 15, 2019",
-        "description": "15-inch steel blade hand saw",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.",
         "price": 44.33,
         "starRating": 3.2,
-        "imageUrl": "assets/images/chalk.jpg"
+        "imageUrl": "assets/images/chalk.jpg",
+        "types": [
+            { "type": "blue" },
+            { "type": "green" },
+            { "type": "white" }
+        ],
+        "reviews": 6,
+        "reviewers": [{
+                "name": "Shivam",
+                "date": "august 14, 2020",
+                "ratings": 4.5,
+                "submission": "Awesome Product!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            },
+            {
+                "name": "Akhil",
+                "date": "november 07, 2020",
+                "ratings": 3,
+                "submission": "Satifactory product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sodales tortor, in ornare est. Curabitur dictum velit urna, vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corporis, dolores quam natus laboriosam laborum optio dignissimos quia illo dolorem!"
+            }
+        ]
     }
 ]

@@ -6,19 +6,18 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { StarComponent } from 'src/app/common/components/star/star.component';
-import { ProductDetailComponent } from 'src/app/common/components/product-detail/product-detail.component';
+import { SharedModule } from 'src/app/common/modules/shared/shared.module';
 
 
 @NgModule({
-  declarations: [HomeComponent,
-  StarComponent,ProductDetailComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

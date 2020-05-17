@@ -1,0 +1,42 @@
+<div class="container">
+
+
+    <div class="detail" fxLayout="row" fxLayoutAlign="space-between center">
+        <img [src]="products[stateID].imageUrl">
+        <div class="description" fxFlex="50%">
+            <h3 class="lead">{{ products[stateID].productName }}</h3>
+            <div class="rating lead" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="4rem">
+                <app-star [rating]="products[stateID].starRating"></app-star>
+                <span>{{ products[stateID].reviews }} reviews</span>
+            </div>
+            <div class="bottom-line lead"></div>
+            <div class="value lead" fxLayout="row" fxLayoutAlign="space-between center">
+                <p class="price">{{ products[stateID].price | currency:'USD':'symbol':'2.2'}}</p>
+                <select name="Select" id="">
+                  <option value="type" *ngFor="let item of products[stateID].types">{{ item.type }}</option>
+                </select>
+            </div>
+
+            <p class="product-desc lead">
+                {{ products[stateID].description }}
+            </p>
+            <div class="bottom-line-small lead-large"></div>
+            <a class="cart">Add to cart</a>
+        </div>
+    </div>
+    <div class="bottom-line lead"></div>
+
+    <div class="review lead">
+        <h3 class="lead">Reviews</h3>
+        <ul class="lead" *ngFor="let item of products[stateID].reviewers" fxLayout="row" fxLayoutAlign="space-between center">
+            <li class="name lead">
+                <p class="name-main">{{ item.name }}</p>
+                <p class="date lead">{{ item.date }}</p>
+                <app-star [rating]="item.ratings"></app-star>
+            </li>
+            <li class="submission" fxFlex="60%">
+                <p>{{ item.submission }}</p>
+            </li>
+        </ul>
+    </div>
+</div>

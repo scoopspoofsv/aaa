@@ -6,11 +6,12 @@ import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from "../common/components/header/header.component";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from '../common/components/footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, HeaderComponent],
+  declarations: [DashboardComponent, HeaderComponent,FooterComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
