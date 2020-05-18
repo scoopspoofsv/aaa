@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import * as data from "../../api/products/products.json";
+import * as data from "../../../api/products/products.json";
+import { Product } from "../../common/interfaces/product.entity";
+import { ProductService } from 'src/app/common/services/product.service';
+
 
 @Component({
   selector: "app-home",
@@ -8,8 +11,11 @@ import * as data from "../../api/products/products.json";
 })
 export class HomeComponent implements OnInit {
 
-  products: any = (data as any).default;
-  filteredProducts: any = (data as any).default;
+  // products: any = (data as any).default;
+
+  products: Product[]= [];
+  filteredProducts: Product[];
+  errorMessage: string;
 
 
   _listFilter: string;
@@ -28,9 +34,20 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor() {}
+  constructor(private productService : ProductService) {}
 
   ngOnInit() {
-    console.log(data[0].productName);
+    this.getProducts();
+  }
+
+  getProducts(){
+    this.productService.getProducts().subscribe({
+
+      next: products => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      },
+      error: err => this.errorMessage = err
+    });
   }
 }

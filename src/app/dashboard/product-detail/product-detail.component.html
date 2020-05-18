@@ -21,7 +21,7 @@
                 {{ products[stateID].description }}
             </p>
             <div class="bottom-line-small lead-large"></div>
-            <a class="cart">Add to cart</a>
+            <a [routerLink]="['/cart-main', { id:products[stateID].productId }]" class="cart">Add to cart</a>
         </div>
     </div>
     <div class="bottom-line lead"></div>

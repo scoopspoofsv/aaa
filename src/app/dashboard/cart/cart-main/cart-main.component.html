@@ -1,0 +1,42 @@
+<div class="shopping-cart container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
+    <ul class="cart" fxFlex="65%">
+        <h3 class="lead">Shopping Cart</h3>
+        <div class="bottom-line lead"></div>
+        <li *ngFor="let item of items" class="lead" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5%">
+            <img [src]="item.product.imageUrl" fxFlex="20%">
+            <div class="description" fxFlex="55%">
+                <h4 class="lead">{{ item.product.productName }}</h4>
+                <p class="lead">{{ item.product.description | slice:0:50 }}</p>
+                <span class="price">{{ item.product.price | currency:'USD':'symbol':'2.2'}}</span>
+            </div>
+            <div class="quantity" fxFlex="15%">
+                <p class="lead">{{ item.quantity }} pcs</p>
+                <a (click)="remove(item.product.productId)">Remove Item</a>
+            </div>
+        </li>
+    </ul>
+
+    <div class="summary" fxFlex="30%">
+        <h3 class="lead">Summary</h3>
+        <div class="bottom-line lead"></div>
+        <h4 class="lead"><strong>Enter coupon code</strong></h4>
+        <div class="bottom-line lead"></div>
+        <div class="subtotal lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>subtotal</p>
+            <p>{{total | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="shipping lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>shipping</p>
+            <p>free</p>
+        </div>
+        <div class="taxes lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>taxes</p>
+            <p>{{ total/20 | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="bottom-line lead"></div>
+        <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>TOTAL</h3>
+            <p>{{total + (total/20) | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+    </div>
+</div>

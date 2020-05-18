@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms'
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/common/modules/shared/shared.module';
 
 
@@ -16,7 +15,6 @@ import { SharedModule } from 'src/app/common/modules/shared/shared.module';
     HomeRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule,
     SharedModule
   ]
 })
