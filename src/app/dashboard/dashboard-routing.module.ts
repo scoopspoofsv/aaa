@@ -27,8 +27,29 @@ const routes: Routes = [
             (m) => m.CartMainModule
           ),
       },
-    ],
-  },
+      {
+        path: "cart-shipping",
+        loadChildren: () =>
+          import("./cart/cart-shipping/cart-shipping.module").then(
+            (m) => m.CartShippingModule
+          ),
+      },
+      {
+        path: "cart-payment",
+        loadChildren: () =>
+          import("./cart/cart-payment/cart-payment.module").then(
+            (m) => m.CartPaymentModule
+          ),
+      },
+      {
+        path: "cart-finalize",
+        loadChildren: () =>
+          import("./cart/cart-finalize/cart-finalize.module").then(
+            (m) => m.CartFinalizeModule
+          ),
+      },
+    ]
+  }
 ];
 
 @NgModule({

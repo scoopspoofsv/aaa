@@ -1,0 +1,77 @@
+<div class="steps">
+    <ul class="container lead" fxLayout="row">
+        <li fxFlex="33.33%">1. Shopping Cart</li>
+        <li fxFlex="33.33%">2. Shipping Detials</li>
+        <li class="active" fxFlex="33.33%">3. Payment Options</li>
+    </ul>
+</div>
+
+<div class="payment container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
+
+    <div class="payment-method" fxFlex="65%">
+        <h3 class="lead">Payment method</h3>
+        <div class="bottom-line lead"></div>
+        <div class="card lead" fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <div class="choose lead" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5%" fxFlex="100%">
+                <input type="radio" name="choose" id="card">
+                <div class="desc">
+                    <h5>Credit Card</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quidem?</p>
+                </div>
+            </div>
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="0000 0000 0000 0000" fxFlex="50%">
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" autocomplete="cc-number" maxlength="5" placeholder="MM/YY" fxFlex="20%">
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" autocomplete="cc-number" maxlength="4" placeholder="CVV" fxFlex="20%">
+            <input type="text" name="name" id="name" placeholder="Card Holder Name" fxFlex="100%">
+        </div>
+        <div class="bottom-line lead"></div>
+        <div class="paypal lead" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5%">
+            <input type="radio" name="choose" id="paypal" fxFlex="5%">
+            <div class="desc" fxFlex="65%">
+                <h5>Paypal</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quidem?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, eos!</p>
+            </div>
+            <img src="../../../../assets/images/Paypal-Logo.png" fxFlex="20%">
+        </div>
+        <div class="bottom-line lead-large"></div>
+    </div>
+
+    <div class="summary" fxFlex="30%">
+        <h3 class="lead">Summary</h3>
+        <div class="bottom-line lead"></div>
+        <ul class="lead">
+            <li *ngFor="let item of items" fxLayout="rpw" fxLayoutAlign="flex-start center" fxLayoutGap="10%" class="lead">
+                <img [src]="item.product.imageUrl" fxFlex="30%">
+                <div class="description">
+                    <p class="lead">{{ item.product.productName }}</p>
+                    <p>{{ item.product.price | currency:'USD':'symbol':'2.2'}}</p>
+                </div>
+            </li>
+        </ul>
+        <div class="bottom-line lead"></div>
+        <h4 class="lead"><strong>Enter coupon code</strong></h4>
+        <div class="bottom-line lead"></div>
+        <div class="subtotal lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>subtotal</p>
+            <p>{{total | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="shipping lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>shipping</p>
+            <p>Free</p>
+        </div>
+        <div class="taxes lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>taxes</p>
+            <p>{{ total/20 | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="bottom-line lead"></div>
+        <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>TOTAL</h3>
+            <p>{{total + (total/20) | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container lead" fxLayoutGap="2rem">
+    <a class="primary" [routerLink]="['/cart-finalize']" (click)="clearAll()">Pay Now</a>
+    <a class="light" [routerLink]="['/cart-shipping']">Back</a>
+</div>

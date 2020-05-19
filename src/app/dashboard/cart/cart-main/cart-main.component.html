@@ -1,3 +1,11 @@
+<div class="steps">
+    <ul class="container lead" fxLayout="row">
+        <li class="active" fxFlex="33.33%">1. Shopping Cart</li>
+        <li fxFlex="33.33%">2. Shipping Detials</li>
+        <li fxFlex="33.33%">3. Payment Options</li>
+    </ul>
+</div>
+
 <div class="shopping-cart container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
     <ul class="cart" fxFlex="65%">
         <h3 class="lead">Shopping Cart</h3>
@@ -14,6 +22,7 @@
                 <a (click)="remove(item.product.productId)">Remove Item</a>
             </div>
         </li>
+        <div class="bottom-line lead"></div>
     </ul>
 
     <div class="summary" fxFlex="30%">
@@ -39,4 +48,11 @@
             <p>{{total + (total/20) | currency:'USD':'symbol':'2.2'}}</p>
         </div>
     </div>
+
+    <!-- <a (click)="clearAll()">Clear Cart</a> -->
+
+</div>
+<div class="container" fxLayoutGap="2rem">
+    <a class="primary" [routerLink]="['/cart-shipping']">Next</a>
+    <a class="light" (click)="clearAll()">Cancel</a>
 </div>

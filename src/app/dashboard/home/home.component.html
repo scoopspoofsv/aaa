@@ -10,7 +10,10 @@
         <h2>Product Listing</h2>
         <ul fxLayout="row wrap" fxLayoutAlign="space-between flex-start">
             <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}">
-                <img [src]="product.imageUrl" [title]="product.productName">
+                <div class="image">
+                    <img [src]="product.imageUrl" [title]="product.productName">
+                    <a [routerLink]="['/cart-main', { id:product.productId }]">Add to Cart</a>
+                </div>
                 <div class="description">
                     <h3><a [routerLink]="['/products/',product.productId]">{{ product.productName }}</a></h3>
                     <app-star [rating]="product.starRating"></app-star>

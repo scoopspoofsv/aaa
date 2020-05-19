@@ -45,7 +45,7 @@ export class CartMainComponent implements OnInit {
               let index: number = -1;
               for (var i = 0; i < cart.length; i++) {
                 let item: Item = JSON.parse(cart[i]);
-                if (item.product.productId == id) {
+                if (item.product.productId-1 == id) {
                   index = i;
                   break;
                 }
@@ -94,6 +94,13 @@ export class CartMainComponent implements OnInit {
 				break;
 			}
 		}
+		localStorage.setItem("cart", JSON.stringify(cart));
+		this.loadCart();
+	}
+
+  clearAll(): void {
+		let cart: any = JSON.parse(localStorage.getItem('cart'));
+    cart.length = 0;
 		localStorage.setItem("cart", JSON.stringify(cart));
 		this.loadCart();
 	}

@@ -1,0 +1,24 @@
+h2 {
+    font-size: 3.5rem;
+    color: var(--primary);
+    font-weight: 400;
+}
+
+a {
+    cursor: pointer;
+    &.primary {
+        color: #fff;
+        background-color: var(--primary);
+        padding: 1.5rem 4rem;
+    }
+}
+
+.thankyou {
+    padding: 5rem 0;
+    background-color: var(--light);
+    text-align: center;
+    p {
+        width: 50%;
+        margin: 0 auto 4rem auto;
+    }
+}

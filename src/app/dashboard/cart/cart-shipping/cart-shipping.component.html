@@ -1,0 +1,86 @@
+<div class="steps">
+    <ul class="container lead" fxLayout="row">
+        <li fxFlex="33.33%">1. Shopping Cart</li>
+        <li class="active" fxFlex="33.33%">2. Shipping Detials</li>
+        <li fxFlex="33.33%">3. Payment Options</li>
+    </ul>
+</div>
+
+<div class="shipping-details container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
+
+    <div class="customer" fxFlex="65%">
+        <h3 class="lead">Shipping Details</h3>
+        <div class="bottom-line lead"></div>
+        <form class="lead" fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <input type="text" name="fName" id="fName" placeholder="First Name" fxFlex="47%">
+            <input type="text" name="lName" id="lName" placeholder="Last Name" fxFlex="47%">
+            <input type="text" name="address" id="address" placeholder="Address" fxFlex="100%">
+            <input type="text" name="address2" id="address2" placeholder="Address2" fxFlex="100%">
+            <select name="country" id="country" fxFlex="47%">
+              <option value="" disabled selected>Country</option>
+              <option value="India">India</option>
+              <option value="India">USA</option>
+              <option value="India">China</option>
+            </select>
+            <input type="text" name="City" id="City" placeholder="City" fxFlex="47%">
+            <input type="number" name="pincode" id="pincode" placeholder="Zip/Postal Code" fxFlex="47%">
+            <input type="number" name="number" id="number" placeholder="Phone Number" fxFlex="47%">
+        </form>
+        <div class="bottom-line lead"></div>
+        <div class="shipping-type lead-large" fxLayout="row" fxLayoutGap="10%" fx>
+            <div class="free" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center" fxFlex="40%">
+                <input type="radio" name="fees" id="free" (click)="changeShippingFee(0)">
+                <div class="desc">
+                    <h4>Free Shipping</h4>
+                    <p>Between 2-5 working days</p>
+                </div>
+            </div>
+            <div class="paid" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center" fxFlex="40%">
+                <input type="radio" name="fees" id="paid" (click)="changeShippingFee(20)">
+                <div class="desc">
+                    <h4>Next Day Delivery - $20</h4>
+                    <p>24 hours from checkout</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary" fxFlex="30%">
+        <h3 class="lead">Summary</h3>
+        <div class="bottom-line lead"></div>
+        <ul class="lead">
+            <li *ngFor="let item of items" fxLayout="rpw" fxLayoutAlign="flex-start center" fxLayoutGap="10%" class="lead">
+                <img [src]="item.product.imageUrl" fxFlex="30%">
+                <div class="description">
+                    <p class="lead">{{ item.product.productName }}</p>
+                    <p>{{ item.product.price | currency:'USD':'symbol':'2.2'}}</p>
+                </div>
+            </li>
+        </ul>
+        <div class="bottom-line lead"></div>
+        <h4 class="lead"><strong>Enter coupon code</strong></h4>
+        <div class="bottom-line lead"></div>
+        <div class="subtotal lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>subtotal</p>
+            <p>{{total | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="shipping lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>shipping</p>
+            <p>{{ shippingFee == 0? "free" : shippingFee | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="taxes lead" fxLayout="row" fxLayoutAlign="space-between center">
+            <p>taxes</p>
+            <p>{{ total/20 | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+        <div class="bottom-line lead"></div>
+        <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
+            <h3>TOTAL</h3>
+            <p>{{total + (total/20) + shippingFee | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" fxLayoutGap="2rem">
+    <a class="primary" [routerLink]="['/cart-payment']">Next</a>
+    <a class="light" [routerLink]="['/cart-main']">Back</a>
+</div>

@@ -46,5 +46,27 @@ ul {
             margin-bottom: 1rem;
             font-weight: 500;
         }
+        .image {
+            position: relative;
+            a {
+                position: absolute;
+                width: 9rem;
+                text-align: center;
+                font-size: 1rem;
+                top: 60%;
+                right: 5%;
+                cursor: pointer;
+                background-color: var(--primary);
+                color: #fff;
+                padding: 1rem 1.5rem;
+                opacity: 0;
+                transition: all 0.5s ease;
+            }
+            &:hover {
+                a {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
