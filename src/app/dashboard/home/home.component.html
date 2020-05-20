@@ -1,15 +1,15 @@
 <main>
     <div class="header" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4rem">
         <h2>Welcome to our eCommCart!</h2>
-        <div class="search" fxLayout="row" fxLayoutGap="2rem">
-            <input type="text" [(ngModel)]="listFilter" fxFlex="35rem" placeholder="Search...">
-            <a class="submit" fxFlex="15rem">Submit</a>
+        <div class="search" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="2rem">
+            <input type="text" [(ngModel)]="listFilter" fxFlex="35rem" fxFlex.lt-sm="none" placeholder="Search...">
+            <a class="submit" fxFlex="15rem" fxFlex.lt-sm="none">Submit</a>
         </div>
     </div>
     <div class="container">
         <h2>Product Listing</h2>
         <ul fxLayout="row wrap" fxLayoutAlign="space-between flex-start">
-            <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}">
+            <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}" fxFlex.sm="{{ 100 / 2 - 2 }}" fxFlex.lt-sm="100%">
                 <div class="image">
                     <img [src]="product.imageUrl" [title]="product.productName">
                     <a [routerLink]="['/cart-main', { id:product.productId }]">Add to Cart</a>

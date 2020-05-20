@@ -19,3 +19,16 @@
         padding: 1rem 2rem;
     }
 }
+
+@media screen and (max-width: 599px) {
+    .header {
+        li {
+            &::after {
+                display: none;
+            }
+        }
+        .cart {
+            padding: 0.5rem 1.5rem;
+        }
+    }
+}

@@ -6,41 +6,41 @@
     </ul>
 </div>
 
-<div class="payment container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
+<div class="payment container lead-large" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between flex-start" fxLayoutAlign.lt-md="center flex-start" fxLayoutGap="5%" fxLayoutGap.lt-md="0">
 
-    <div class="payment-method" fxFlex="65%">
+    <div class="payment-method" fxFlex="65%" fxFlex.lt-md="100%">
         <h3 class="lead">Payment method</h3>
         <div class="bottom-line lead"></div>
         <div class="card lead" fxLayout="row wrap" fxLayoutAlign="space-between center">
-            <div class="choose lead" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5%" fxFlex="100%">
+            <div class="choose lead" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center" fxLayoutAlign.lt-md="center flex-start" fxLayoutGap="5%" fxFlex="100%">
                 <input type="radio" name="choose" id="card">
-                <div class="desc">
+                <div class="desc lead" fxFlex.lt-md="100%">
                     <h5>Credit Card</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quidem?</p>
                 </div>
             </div>
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="0000 0000 0000 0000" fxFlex="50%">
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" autocomplete="cc-number" maxlength="5" placeholder="MM/YY" fxFlex="20%">
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" autocomplete="cc-number" maxlength="4" placeholder="CVV" fxFlex="20%">
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="0000 0000 0000 0000" fxFlex="50%" fxFlex.lt-md="100%">
+            <input id="cced" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" autocomplete="cc-number" maxlength="5" placeholder="MM/YY" fxFlex="20%" fxFlex.lt-md="40%">
+            <input id="cccvv" type="tel" inputmode="numeric" pattern="[0-9]{3,4}" autocomplete="cc-number" maxlength="4" placeholder="CVV" fxFlex="20%" fxFlex.lt-md="40%">
             <input type="text" name="name" id="name" placeholder="Card Holder Name" fxFlex="100%">
         </div>
         <div class="bottom-line lead"></div>
         <div class="paypal lead" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5%">
-            <input type="radio" name="choose" id="paypal" fxFlex="5%">
-            <div class="desc" fxFlex="65%">
+            <input type="radio" name="choose" id="paypal" fxFlex="5%" fxFlex.lt-md="10%">
+            <div class="desc lead" fxFlex="65%" fxFlex.lt-md="100%">
                 <h5>Paypal</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quidem?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, eos!</p>
             </div>
-            <img src="../../../../assets/images/Paypal-Logo.png" fxFlex="20%">
+            <img src="../../../../assets/images/Paypal-Logo.png" fxFlex="20%" fxFlex.lt-md="40%">
         </div>
         <div class="bottom-line lead-large"></div>
     </div>
 
-    <div class="summary" fxFlex="30%">
+    <div class="summary" fxFlex="30%" fxFlex.lt-md="100%">
         <h3 class="lead">Summary</h3>
         <div class="bottom-line lead"></div>
         <ul class="lead">
-            <li *ngFor="let item of items" fxLayout="rpw" fxLayoutAlign="flex-start center" fxLayoutGap="10%" class="lead">
+            <li *ngFor="let item of items" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10%" class="lead">
                 <img [src]="item.product.imageUrl" fxFlex="30%">
                 <div class="description">
                     <p class="lead">{{ item.product.productName }}</p>
@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<div class="container lead" fxLayoutGap="2rem">
+<div class="container lead" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
     <a class="primary" [routerLink]="['/cart-finalize']" (click)="clearAll()">Pay Now</a>
     <a class="light" [routerLink]="['/cart-shipping']">Back</a>
 </div>

@@ -27,7 +27,7 @@ export class CartMainComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       var id = params["id"] - 1;
 
-      if (id) {
+      if (id || id == 0) {
         this.productService.getELement(id).subscribe({
           next: (products) => {
             this.products[id] = products[id];

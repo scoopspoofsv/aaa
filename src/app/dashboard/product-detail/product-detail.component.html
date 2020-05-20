@@ -1,7 +1,7 @@
 <div class="container">
 
 
-    <div class="detail" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="detail lead" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" fxLayoutAlign.lt-md="center center">
         <img [src]="products[stateID].imageUrl">
         <div class="description" fxFlex="50%">
             <h3 class="lead">{{ products[stateID].productName }}</h3>
@@ -28,7 +28,7 @@
 
     <div class="review lead">
         <h3 class="lead">Reviews</h3>
-        <ul class="lead" *ngFor="let item of products[stateID].reviewers" fxLayout="row" fxLayoutAlign="space-between center">
+        <ul class="lead" *ngFor="let item of products[stateID].reviewers" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center flex-start">
             <li class="name lead">
                 <p class="name-main">{{ item.name }}</p>
                 <p class="date lead">{{ item.date }}</p>

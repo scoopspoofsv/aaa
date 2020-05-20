@@ -76,3 +76,25 @@ h3 {
     color: var(--primary);
     font-weight: 400;
 }
+
+@media screen and (max-width: 599px) {
+    h3 {
+        font-size: 2.6rem;
+    }
+    .detail {
+        margin-top: 2rem;
+        img {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .description {
+            .price {
+                font-size: 2.6rem;
+            }
+            select {
+                font-size: 1.8rem;
+                width: 50%;
+            }
+        }
+    }
+}

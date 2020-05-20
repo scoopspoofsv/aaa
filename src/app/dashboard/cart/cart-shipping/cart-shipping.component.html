@@ -6,9 +6,9 @@
     </ul>
 </div>
 
-<div class="shipping-details container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
+<div class="shipping-details container lead-large" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between flex-start" fxLayoutAlign.lt-md="center flex-start" fxLayoutGap="5%" fxLayoutGap.lt-md="0">
 
-    <div class="customer" fxFlex="65%">
+    <div class="customer" fxFlex="65%" fxFlex.lt-md="100%">
         <h3 class="lead">Shipping Details</h3>
         <div class="bottom-line lead"></div>
         <form class="lead" fxLayout="row wrap" fxLayoutAlign="space-between center">
@@ -27,15 +27,15 @@
             <input type="number" name="number" id="number" placeholder="Phone Number" fxFlex="47%">
         </form>
         <div class="bottom-line lead"></div>
-        <div class="shipping-type lead-large" fxLayout="row" fxLayoutGap="10%" fx>
-            <div class="free" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center" fxFlex="40%">
+        <div class="shipping-type lead-large" fxLayout="row" fxLayoutGap="10%" fxLayoutAlign.xs="center flex-start">
+            <div class="free" fxLayout="row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center center" fxLayoutAlign.xs="flex-start center" fxFlex="40%">
                 <input type="radio" name="fees" id="free" (click)="changeShippingFee(0)">
                 <div class="desc">
                     <h4>Free Shipping</h4>
                     <p>Between 2-5 working days</p>
                 </div>
             </div>
-            <div class="paid" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center" fxFlex="40%">
+            <div class="paid" fxLayout="row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center center" fxLayoutAlign.xs="flex-start center" fxFlex="40%">
                 <input type="radio" name="fees" id="paid" (click)="changeShippingFee(20)">
                 <div class="desc">
                     <h4>Next Day Delivery - $20</h4>
@@ -45,11 +45,11 @@
         </div>
     </div>
 
-    <div class="summary" fxFlex="30%">
+    <div class="summary" fxFlex="30%" fxFlex.lt-md="100%">
         <h3 class="lead">Summary</h3>
         <div class="bottom-line lead"></div>
         <ul class="lead">
-            <li *ngFor="let item of items" fxLayout="rpw" fxLayoutAlign="flex-start center" fxLayoutGap="10%" class="lead">
+            <li *ngFor="let item of items" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10%" class="lead">
                 <img [src]="item.product.imageUrl" fxFlex="30%">
                 <div class="description">
                     <p class="lead">{{ item.product.productName }}</p>
@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<div class="container" fxLayoutGap="2rem">
+<div class="container" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
     <a class="primary" [routerLink]="['/cart-payment']">Next</a>
     <a class="light" [routerLink]="['/cart-main']">Back</a>
 </div>

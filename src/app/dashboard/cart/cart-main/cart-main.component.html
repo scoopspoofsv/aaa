@@ -6,11 +6,11 @@
     </ul>
 </div>
 
-<div class="shopping-cart container" fxLayout="row" fxLayoutAlign="space-between flex-start" fxLayoutGap="5%">
-    <ul class="cart" fxFlex="65%">
+<div class="shopping-cart container lead-large" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between flex-start" fxLayoutAlign.lt-md="center flex-start" fxLayoutGap="5%" fxLayoutGap.lt-md="0">
+    <ul class="cart" fxFlex="65%" fxFlex.lt-md="100%">
         <h3 class="lead">Shopping Cart</h3>
         <div class="bottom-line lead"></div>
-        <li *ngFor="let item of items" class="lead" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5%">
+        <li *ngFor="let item of items" class="lead" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center center" fxLayoutGap="5%">
             <img [src]="item.product.imageUrl" fxFlex="20%">
             <div class="description" fxFlex="55%">
                 <h4 class="lead">{{ item.product.productName }}</h4>
@@ -25,7 +25,7 @@
         <div class="bottom-line lead"></div>
     </ul>
 
-    <div class="summary" fxFlex="30%">
+    <div class="summary" fxFlex="30%" fxFlex.lt-md="100%">
         <h3 class="lead">Summary</h3>
         <div class="bottom-line lead"></div>
         <h4 class="lead"><strong>Enter coupon code</strong></h4>
@@ -52,7 +52,7 @@
     <!-- <a (click)="clearAll()">Clear Cart</a> -->
 
 </div>
-<div class="container" fxLayoutGap="2rem">
+<div class="container" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
     <a class="primary" [routerLink]="['/cart-shipping']">Next</a>
     <a class="light" (click)="clearAll()">Cancel</a>
 </div>

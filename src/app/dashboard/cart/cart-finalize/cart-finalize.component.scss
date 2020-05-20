@@ -22,3 +22,18 @@ a {
         margin: 0 auto 4rem auto;
     }
 }
+
+@media screen and (max-width: 599px) {
+    .steps {
+        ul {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .thankyou {
+        p {
+            width: 100%;
+        }
+    }
+}

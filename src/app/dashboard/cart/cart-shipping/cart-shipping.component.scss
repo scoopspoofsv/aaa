@@ -101,3 +101,31 @@ a {
         }
     }
 }
+
+@media screen and (max-width: 599px) {
+    .steps {
+        ul {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .shipping-details {
+        .customer {
+            width: 100%;
+            text-align: center;
+            img {
+                width: 100%;
+            }
+            form {
+                input,
+                select {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        .summary {
+            width: 100%;
+        }
+    }
+}

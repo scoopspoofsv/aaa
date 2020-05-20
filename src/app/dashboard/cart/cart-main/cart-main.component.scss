@@ -81,3 +81,25 @@ a {
         }
     }
 }
+
+@media screen and (max-width: 599px) {
+    .steps {
+        ul {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .shopping-cart {
+        .cart {
+            width: 100%;
+            text-align: center;
+            img {
+                width: 100%;
+            }
+        }
+        .summary {
+            width: 100%;
+        }
+    }
+}

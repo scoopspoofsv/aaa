@@ -10,7 +10,8 @@ h2 {
     padding: 4rem;
     text-align: center;
     input {
-        padding: 2rem;
+        padding: 1rem;
+        font-size: 2.1rem
     }
     .search {
         a {
@@ -47,14 +48,17 @@ ul {
             font-weight: 500;
         }
         .image {
+            width: 10rem;
+            height: 10rem;
             position: relative;
             a {
                 position: absolute;
                 width: 9rem;
                 text-align: center;
                 font-size: 1rem;
-                top: 60%;
-                right: 5%;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 cursor: pointer;
                 background-color: var(--primary);
                 color: #fff;
@@ -66,6 +70,28 @@ ul {
                 a {
                     opacity: 1;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    h2 {
+        font-size: 2.6rem;
+    }
+    .header {
+        padding: 3rem;
+        padding-top: 2rem;
+        input {
+            padding: 1rem;
+            font-size: 1.8rem
+        }
+        .search {
+            a {
+                background-color: var(--primary);
+                color: #fff;
+                padding: 1.8rem;
+                cursor: pointer;
             }
         }
     }
