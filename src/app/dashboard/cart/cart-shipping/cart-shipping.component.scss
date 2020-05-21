@@ -11,6 +11,9 @@ button {
         color: #fff;
         background-color: var(--primary);
         padding: 1rem 4rem;
+        &:disabled {
+            background-color: var(--light);
+        }
     }
     &.light {
         color: var(--primary);
