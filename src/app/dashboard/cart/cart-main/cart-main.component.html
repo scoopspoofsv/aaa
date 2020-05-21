@@ -7,7 +7,7 @@
 </div>
 
 <div class="shopping-cart container lead-large" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between flex-start" fxLayoutAlign.lt-md="center flex-start" fxLayoutGap="5%" fxLayoutGap.lt-md="0">
-    <ul class="cart" fxFlex="65%" fxFlex.lt-md="100%">
+    <ul class="cart" fxFlex="65%" fxFlex.lt-md="100%" *ngIf="items && items.length else emptycart">
         <h3 class="lead">Shopping Cart</h3>
         <div class="bottom-line lead"></div>
         <li *ngFor="let item of items" class="lead" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center center" fxLayoutGap="5%">
@@ -17,13 +17,17 @@
                 <p class="lead">{{ item.product.description | slice:0:50 }}</p>
                 <span class="price">{{ item.product.price | currency:'USD':'symbol':'2.2'}}</span>
             </div>
-            <div class="quantity" fxFlex="15%">
+            <div class="quantity" fxFlex="15%" fxLayout="column">
                 <p class="lead">{{ item.quantity }} pcs</p>
-                <a (click)="remove(item.product.productId)">Remove Item</a>
+                <a (click)="addItem(item.product.productId - 1)"><span class="fas fa-plus fa-2x lead"></span></a>
+                <a (click)="remove(item.product.productId)"><span class="fas fa-trash-alt fa-2x"></span></a>
             </div>
         </li>
         <div class="bottom-line lead"></div>
     </ul>
+    <ng-template #emptycart>
+        Cart is empty!
+    </ng-template>
 
     <div class="summary" fxFlex="30%" fxFlex.lt-md="100%">
         <h3 class="lead">Summary</h3>
@@ -56,3 +60,7 @@
     <a class="primary" [routerLink]="['/cart-shipping']">Next</a>
     <a class="light" (click)="clearAll()">Cancel</a>
 </div>
+
+<ng-template *ngIf="items.length">
+    Shopping cart is empty
+</ng-template>

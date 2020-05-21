@@ -17,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
 
   products: Product[]= [];
 
+
   constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {

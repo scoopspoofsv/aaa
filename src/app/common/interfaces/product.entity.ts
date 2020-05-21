@@ -7,7 +7,20 @@ export interface Product {
   price: number;
   starRating: number;
   imageUrl: string;
-  types: [];
+  types: [
+    {
+      type: string;
+      price: number;
+    },
+    {
+      type: string;
+      price: number;
+    },
+    {
+      type: string;
+      price: number;
+    }
+  ];
   reviews: number;
-  reviewers: []
+  reviewers: [];
 }

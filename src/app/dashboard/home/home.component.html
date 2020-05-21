@@ -12,7 +12,7 @@
             <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}" fxFlex.sm="{{ 100 / 2 - 2 }}" fxFlex.lt-sm="100%">
                 <div class="image">
                     <img [src]="product.imageUrl" [title]="product.productName">
-                    <a [routerLink]="['/cart-main', { id:product.productId }]">Add to Cart</a>
+                    <a (click)="addItem(product.productId - 1)">Add to Cart</a>
                 </div>
                 <div class="description">
                     <h3><a [routerLink]="['/products/',product.productId]">{{ product.productName }}</a></h3>

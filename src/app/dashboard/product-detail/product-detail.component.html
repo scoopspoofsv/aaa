@@ -12,8 +12,9 @@
             <div class="bottom-line lead"></div>
             <div class="value lead" fxLayout="row" fxLayoutAlign="space-between center">
                 <p class="price">{{ products[stateID].price | currency:'USD':'symbol':'2.2'}}</p>
-                <select name="Select" id="">
-                  <option value="type" *ngFor="let item of products[stateID].types">{{ item.type }}</option>
+                <select name="Select">
+                  <option value="type" *ngFor="let item of products[stateID].types">
+                    {{ item.type }}</option>
                 </select>
             </div>
 
@@ -21,7 +22,7 @@
                 {{ products[stateID].description }}
             </p>
             <div class="bottom-line-small lead-large"></div>
-            <a [routerLink]="['/cart-main', { id:products[stateID].productId }]" class="cart">Add to cart</a>
+            <a [routerLink]="['/cart-main', { id:products[stateID].productId }]" class="cart">Buy now</a>
         </div>
     </div>
     <div class="bottom-line lead"></div>

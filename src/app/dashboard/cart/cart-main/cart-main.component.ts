@@ -103,5 +103,48 @@ export class CartMainComponent implements OnInit {
     cart.length = 0;
 		localStorage.setItem("cart", JSON.stringify(cart));
 		this.loadCart();
-	}
+  }
+
+
+  addItem(id: number): void{
+    this.productService.getELement(id).subscribe({
+      next: (products) => {
+        this.products[id] = products[id];
+        var item: Item = {
+          product: products[id],
+          quantity: 1,
+        };
+        console.log(item);
+        if (localStorage.getItem("cart") == null) {
+          let cart: any = [];
+          cart.push(JSON.stringify(item));
+          localStorage.setItem("cart", JSON.stringify(cart));
+        } else {
+          let cart: any = JSON.parse(localStorage.getItem("cart"));
+          let index: number = -1;
+          for (var i = 0; i < cart.length; i++) {
+            let item: Item = JSON.parse(cart[i]);
+            if (item.product.productId-1 == id) {
+              index = i;
+              break;
+            }
+          }
+          if (index == -1) {
+            cart.push(JSON.stringify(item));
+            localStorage.setItem("cart", JSON.stringify(cart));
+          } else {
+            let item: Item = JSON.parse(cart[index]);
+            if(item.quantity < 10){item.quantity += 1;}
+            else{alert("maximum limit reached for " + item.product.productName + "!!!");}
+            cart[index] = JSON.stringify(item);
+            localStorage.setItem("cart", JSON.stringify(cart));
+          }
+        }
+        this.loadCart();
+      },
+      error: (err) => (this.errorMessage = err),
+    });
+  }
 }
+
+

@@ -1,12 +1,9 @@
 import { Injectable } from "@angular/core";
 
-import * as data from "src/api/products/products.json";
-
 import { Product } from "../interfaces/product.entity";
 
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
-import { tap, catchError } from 'rxjs/operators'
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 
 @Injectable({
@@ -26,17 +23,6 @@ export class ProductService {
     return this.http.get<Product[]>(this.productUrl)
   }
 
-  private handleError(err:HttpErrorResponse) {
-    let errorMessage = '';
-    if(err.error instanceof ErrorEvent) {
-      errorMessage = `An error occured: ${err.error.message}`;
-    }
-    else{
-      errorMessage = `server returned code: ${err.status},  error message is: ${err.message}`;
-    }
-    console.error(errorMessage);
-    return throwError(errorMessage);
-  }
 
 
 

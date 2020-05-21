@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import * as data from "../../../api/products/products.json";
 import { Product } from "../../common/interfaces/product.entity";
 import { ProductService } from 'src/app/common/services/product.service';
+import { Item } from 'src/app/common/interfaces/item';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class HomeComponent implements OnInit {
 
   products: Product[]= [];
   filteredProducts: Product[];
+  items: Item[] = [];
   errorMessage: string;
+  total: number = 0;
 
 
   _listFilter: string;
@@ -50,4 +53,57 @@ export class HomeComponent implements OnInit {
       error: err => this.errorMessage = err
     });
   }
+
+  addItem(id: number): void{
+    this.productService.getELement(id).subscribe({
+      next: (products) => {
+        this.products[id] = products[id];
+        var item: Item = {
+          product: products[id],
+          quantity: 1,
+        };
+        console.log(item);
+        if (localStorage.getItem("cart") == null) {
+          let cart: any = [];
+          cart.push(JSON.stringify(item));
+          localStorage.setItem("cart", JSON.stringify(cart));
+        } else {
+          let cart: any = JSON.parse(localStorage.getItem("cart"));
+          let index: number = -1;
+          for (var i = 0; i < cart.length; i++) {
+            let item: Item = JSON.parse(cart[i]);
+            if (item.product.productId-1 == id) {
+              index = i;
+              break;
+            }
+          }
+          if (index == -1) {
+            cart.push(JSON.stringify(item));
+            localStorage.setItem("cart", JSON.stringify(cart));
+          } else {
+            let item: Item = JSON.parse(cart[index]);
+            if(item.quantity < 10){item.quantity += 1;}
+            cart[index] = JSON.stringify(item);
+            localStorage.setItem("cart", JSON.stringify(cart));
+          }
+        }
+        this.loadCart();
+      },
+      error: (err) => (this.errorMessage = err),
+    });
+  }
+
+  loadCart(): void {
+		this.total = 0;
+		this.items = [];
+		let cart = JSON.parse(localStorage.getItem('cart'));
+		for (var i = 0; i < cart.length; i++) {
+			let item = JSON.parse(cart[i]);
+			this.items.push({
+				product: item.product,
+				quantity: item.quantity
+			});
+      this.total += item.product.price * item.quantity;
+		}
+	}
 }

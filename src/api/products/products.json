@@ -7,10 +7,18 @@
         "price": 19.95,
         "starRating": 3.2,
         "imageUrl": "assets/images/leaf-rake.jpg",
-        "types": [
-            { "type": "long" },
-            { "type": "short" },
-            { "type": "medium" }
+        "types": [{
+                "type": "long",
+                "price": 19.95
+            },
+            {
+                "type": "short",
+                "price": 15.95
+            },
+            {
+                "type": "medium",
+                "price": 24.95
+            }
         ],
         "reviews": 5,
         "reviewers": [{
@@ -36,10 +44,18 @@
         "price": 32.99,
         "starRating": 4.2,
         "imageUrl": "assets/images/garden-cart.jpg",
-        "types": [
-            { "type": "big" },
-            { "type": "small" },
-            { "type": "regular" }
+        "types": [{
+                "type": "big",
+                "price": 32.99
+            },
+            {
+                "type": "small",
+                "price": 21.99
+            },
+            {
+                "type": "regular",
+                "price": 51.99
+            }
         ],
         "reviews": 4,
         "reviewers": [{
@@ -65,10 +81,18 @@
         "price": 92.12,
         "starRating": 3.5,
         "imageUrl": "assets/images/cinder-block.jpg",
-        "types": [
-            { "type": "commercial" },
-            { "type": "regular" },
-            { "type": "duplicate" }
+        "types": [{
+                "type": "commercial",
+                "price": 92.12
+            },
+            {
+                "type": "regular",
+                "price": 52.12
+            },
+            {
+                "type": "duplicate",
+                "price": 12.12
+            }
         ],
         "reviews": 3,
         "reviewers": [{
@@ -94,10 +118,18 @@
         "price": 12.19,
         "starRating": 4.0,
         "imageUrl": "assets/images/vase.jpg",
-        "types": [
-            { "type": "ceramic" },
-            { "type": "steel" },
-            { "type": "plastic" }
+        "types": [{
+                "type": "ceramic",
+                "price": 12.19
+            },
+            {
+                "type": "steel",
+                "price": 15.19
+            },
+            {
+                "type": "plastic",
+                "price": 6.19
+            }
         ],
         "reviews": 6,
         "reviewers": [{
@@ -123,10 +155,18 @@
         "price": 8.9,
         "starRating": 4.8,
         "imageUrl": "assets/images/hammer.jpg",
-        "types": [
-            { "type": "long" },
-            { "type": "short" },
-            { "type": "medium" }
+        "types": [{
+                "type": "long",
+                "price": 8.9
+            },
+            {
+                "type": "short",
+                "price": 4.9
+            },
+            {
+                "type": "medium",
+                "price": 6.9
+            }
         ],
         "reviews": 6,
         "reviewers": [{
@@ -152,10 +192,18 @@
         "price": 16.2,
         "starRating": 3.0,
         "imageUrl": "assets/images/blanket.jpg",
-        "types": [
-            { "type": "silk" },
-            { "type": "cotton" },
-            { "type": "synthetic" }
+        "types": [{
+                "type": "silk",
+                "price": 16.2
+            },
+            {
+                "type": "cotton",
+                "price": 26.2
+            },
+            {
+                "type": "synthetic",
+                "price": 12.2
+            }
         ],
         "reviews": 5,
         "reviewers": [{
@@ -181,10 +229,18 @@
         "price": 12.83,
         "starRating": 4.8,
         "imageUrl": "assets/images/glasses.jpg",
-        "types": [
-            { "type": "reflectors" },
-            { "type": "protectors" },
-            { "type": "regular" }
+        "types": [{
+                "type": "reflectors",
+                "price": 12.83
+            },
+            {
+                "type": "protectors",
+                "price": 15.83
+            },
+            {
+                "type": "regular",
+                "price": 8.83
+            }
         ],
         "reviews": 2,
         "reviewers": [{
@@ -210,10 +266,18 @@
         "price": 11.55,
         "starRating": 3.7,
         "imageUrl": "assets/images/saw.jpg",
-        "types": [
-            { "type": "long" },
-            { "type": "short" },
-            { "type": "medium" }
+        "types": [{
+                "type": "long",
+                "price": 11.55
+            },
+            {
+                "type": "short",
+                "price": 8.55
+            },
+            {
+                "type": "medium",
+                "price": 13.55
+            }
         ],
         "reviews": 3,
         "reviewers": [{
@@ -239,10 +303,18 @@
         "price": 44.33,
         "starRating": 3.2,
         "imageUrl": "assets/images/chalk.jpg",
-        "types": [
-            { "type": "blue" },
-            { "type": "green" },
-            { "type": "white" }
+        "types": [{
+                "type": "blue",
+                "price": 44.33
+            },
+            {
+                "type": "green",
+                "price": 54.33
+            },
+            {
+                "type": "white",
+                "price": 34.33
+            }
         ],
         "reviews": 6,
         "reviewers": [{

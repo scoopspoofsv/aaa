@@ -6,6 +6,7 @@ import { ProductDetailComponent } from './product-detail.component';
 import { StarComponent } from 'src/app/common/components/star/star.component';
 import { SharedModule } from 'src/app/common/modules/shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     ProductDetailRoutingModule,
     SharedModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ]
 })
 export class ProductDetailModule { }
