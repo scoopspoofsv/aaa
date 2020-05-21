@@ -4,8 +4,9 @@ h3 {
     font-weight: 400;
 }
 
-a {
+button {
     cursor: pointer;
+    border: none;
     &.primary {
         color: #fff;
         background-color: var(--primary);
@@ -49,6 +50,7 @@ a {
                 outline: none;
                 border: 0.1rem solid var(--primary);
                 background-color: #fff;
+                width: 100%;
             }
             select {
                 color: var(--primary);
