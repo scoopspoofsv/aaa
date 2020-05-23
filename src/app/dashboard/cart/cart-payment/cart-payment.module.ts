@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CartPaymentRoutingModule } from './cart-payment-routing.module';
 import { CartPaymentComponent } from './cart-payment.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     CartPaymentRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ]
 })
 export class CartPaymentModule { }

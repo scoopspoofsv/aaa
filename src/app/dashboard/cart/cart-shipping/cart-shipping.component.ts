@@ -16,7 +16,9 @@ export class CartShippingComponent implements OnInit {
   total: number = 0;
   shippingFee: number = 0;
   static shippingFee: any;
-  // firstName: string;
+  couponCode: string;
+  couponDiscount: number = 0;
+  couponApplied: boolean = false;
 
   customer: Customer = {
     firstName: null,
@@ -47,5 +49,21 @@ export class CartShippingComponent implements OnInit {
 
   changeShippingFee(amount: number) {
     this.shippingFee = amount;
+  }
+
+  onSubmit() {
+    return this.couponCode;
+  }
+
+  checkCode(): void{
+    if(this.couponCode == "firstbuy")
+    {
+      this.couponDiscount = 50;
+      this.couponApplied = true;
+    }
+    else{
+      this.couponDiscount = 0;
+      this.couponApplied = false;
+    }
   }
 }

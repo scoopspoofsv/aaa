@@ -62,7 +62,6 @@ export class HomeComponent implements OnInit {
           product: products[id],
           quantity: 1,
         };
-        console.log(item);
         if (localStorage.getItem("cart") == null) {
           let cart: any = [];
           cart.push(JSON.stringify(item));

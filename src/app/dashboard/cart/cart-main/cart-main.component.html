@@ -26,13 +26,22 @@
         <div class="bottom-line lead"></div>
     </ul>
     <ng-template #emptycart>
-        Cart is empty!
+        <div class="no-item" fxLayout="column">
+            <p fxFlex="100%" class="empty-cart lead" fxLayoutAlign="flex-start center"><i class="far fa-frown fa-2x"></i> Cart is empty. Add some items first!</p>
+            <a fxFlex="100%" [routerLink]="['']" class="back-to-home" fxLayoutAlign="flex-start center"><i class="fas fa-arrow-left fa-2x"></i> Back to home</a>
+        </div>
     </ng-template>
 
     <div class="summary" fxFlex="30%" fxFlex.lt-md="100%">
         <h3 class="lead">Summary</h3>
         <div class="bottom-line lead"></div>
-        <h4 class="lead"><strong>Enter coupon code</strong></h4>
+        <h4 class="lead">{{ couponApplied == false ? "Buying first time? Use code firstbuy and avail $50 instant discount!" : "Coupon Successfully applied!"}}</h4>
+        <div class="coupon lead">
+            <form (submit)="onSubmit()">
+                <input [(ngModel)]="couponCode" name="coupon" placeholder="Enter Coupon Code" spellcheck="false">
+                <button type="submit" (click)="checkCode()">Enter</button>
+            </form>
+        </div>
         <div class="bottom-line lead"></div>
         <div class="subtotal lead" fxLayout="row" fxLayoutAlign="space-between center">
             <p>subtotal</p>
@@ -49,7 +58,7 @@
         <div class="bottom-line lead"></div>
         <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
             <h3>TOTAL</h3>
-            <p>{{total + (total/20) | currency:'USD':'symbol':'2.2'}}</p>
+            <p>{{ total + (total/20) - couponDiscount| currency:'USD':'symbol':'2.2'}}</p>
         </div>
     </div>
 
@@ -57,10 +66,6 @@
 
 </div>
 <div class="container" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
-    <a class="primary" [routerLink]="['/cart-shipping']">Next</a>
-    <a class="light" (click)="clearAll()">Cancel</a>
+    <button class="primary" [routerLink]="['/cart-shipping']" [disabled]="items.length == 0" skipLocationChange>Next</button>
+    <button class="light" (click)="clearAll()" [disabled]="items.length == 0">Clear cart</button>
 </div>
-
-<ng-template *ngIf="items.length">
-    Shopping cart is empty
-</ng-template>

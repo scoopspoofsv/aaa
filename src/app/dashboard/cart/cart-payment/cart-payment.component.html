@@ -49,7 +49,13 @@
             </li>
         </ul>
         <div class="bottom-line lead"></div>
-        <h4 class="lead"><strong>Enter coupon code</strong></h4>
+        <h4 class="lead">{{ couponApplied == false ? "Buying first time? Use code firstbuy and avail $50 instant discount!" : "Coupon Successfully applied!"}}</h4>
+        <div class="coupon lead">
+            <form (submit)="onSubmit()">
+                <input [(ngModel)]="couponCode" name="coupon" placeholder="Enter Coupon Code" spellcheck="false">
+                <button type="submit" (click)="checkCode()">Enter</button>
+            </form>
+        </div>
         <div class="bottom-line lead"></div>
         <div class="subtotal lead" fxLayout="row" fxLayoutAlign="space-between center">
             <p>subtotal</p>
@@ -66,12 +72,12 @@
         <div class="bottom-line lead"></div>
         <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
             <h3>TOTAL</h3>
-            <p>{{total + (total/20) | currency:'USD':'symbol':'2.2'}}</p>
+            <p>{{total + (total/20) - couponDiscount| currency:'USD':'symbol':'2.2'}}</p>
         </div>
     </div>
 </div>
 
 <div class="container lead" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
-    <a class="primary" [routerLink]="['/cart-finalize']" (click)="clearAll()">Pay Now</a>
+    <a class="primary" [routerLink]="['/cart-finalize']" (click)="clearAll()" skipLocationChange>Pay Now</a>
     <a class="light" [routerLink]="['/cart-shipping']">Back</a>
 </div>

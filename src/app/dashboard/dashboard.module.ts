@@ -6,11 +6,12 @@ import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from "../common/components/header/header.component";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from '../common/components/footer/footer.component';
+import { ClickElsewhereDirective } from '../common/services/click-elsewhere.directive';
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, HeaderComponent,FooterComponent],
+  declarations: [DashboardComponent, HeaderComponent,FooterComponent,ClickElsewhereDirective],
   imports: [
     CommonModule,
     DashboardRoutingModule,

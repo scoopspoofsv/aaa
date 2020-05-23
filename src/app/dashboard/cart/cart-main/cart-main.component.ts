@@ -17,6 +17,11 @@ export class CartMainComponent implements OnInit {
   items: Item[] = [];
   total: number = 0;
   errorMessage: string;
+  couponCode: string;
+  couponDiscount: number = 0;
+  couponApplied: boolean = false;
+
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -55,7 +60,7 @@ export class CartMainComponent implements OnInit {
                 localStorage.setItem("cart", JSON.stringify(cart));
               } else {
                 let item: Item = JSON.parse(cart[index]);
-                item.quantity += 1;
+                if(item.quantity < 10){item.quantity += 1;}
                 cart[index] = JSON.stringify(item);
                 localStorage.setItem("cart", JSON.stringify(cart));
               }
@@ -144,6 +149,23 @@ export class CartMainComponent implements OnInit {
       },
       error: (err) => (this.errorMessage = err),
     });
+  }
+
+
+  onSubmit() {
+    return this.couponCode;
+  }
+
+  checkCode(): void{
+    if(this.couponCode == "firstbuy")
+    {
+      this.couponDiscount = 50;
+      this.couponApplied = true;
+    }
+    else{
+      this.couponDiscount = 0;
+      this.couponApplied = false;
+    }
   }
 }
 

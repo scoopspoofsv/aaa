@@ -22,7 +22,7 @@
                 {{ products[stateID].description }}
             </p>
             <div class="bottom-line-small lead-large"></div>
-            <a [routerLink]="['/cart-main', { id:products[stateID].productId }]" class="cart">Buy now</a>
+            <a [routerLink]="['/cart-main', { id:products[stateID].productId }]" class="cart" skipLocationChange>Buy now</a>
         </div>
     </div>
     <div class="bottom-line lead"></div>

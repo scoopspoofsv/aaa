@@ -13,6 +13,9 @@ export class CartPaymentComponent implements OnInit {
   products: Product[] = [];
   items: Item[] = [];
   total: number = 0;
+  couponCode: string;
+  couponDiscount: number = 0;
+  couponApplied: boolean = false;
 
   constructor() { }
 
@@ -39,6 +42,22 @@ export class CartPaymentComponent implements OnInit {
     cart.length = 0;
 		localStorage.setItem("cart", JSON.stringify(cart));
 		this.loadCart();
-	}
+  }
+
+  onSubmit() {
+    return this.couponCode;
+  }
+
+  checkCode(): void{
+    if(this.couponCode == "firstbuy")
+    {
+      this.couponDiscount = 50;
+      this.couponApplied = true;
+    }
+    else{
+      this.couponDiscount = 0;
+      this.couponApplied = false;
+    }
+  }
 
 }

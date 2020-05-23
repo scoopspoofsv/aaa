@@ -5,6 +5,7 @@ import { CartMainRoutingModule } from './cart-main-routing.module';
 import { CartMainComponent } from './cart-main.component';
 import { ProductService } from 'src/app/common/services/product.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     CartMainRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [
     ProductService
