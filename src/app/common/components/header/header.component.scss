@@ -5,9 +5,11 @@
         &::after {
             content: '|';
             margin-left: 4rem;
+            color: var(--primary);
         }
         &:nth-child(4),
-        &:nth-child(5) {
+        &:nth-child(5),
+        &:nth-child(6) {
             &::after {
                 display: none;
             }
@@ -15,7 +17,7 @@
     }
     .cart {
         background-color: var(--primary);
-        color: #fff;
+        color: var(--white-color);
         padding: 1rem 2rem;
     }
 }
@@ -28,6 +30,11 @@ i {
     .header {
         li {
             &::after {
+                display: none;
+            }
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
                 display: none;
             }
         }

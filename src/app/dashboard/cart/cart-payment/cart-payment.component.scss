@@ -7,7 +7,7 @@ h3 {
 a {
     cursor: pointer;
     &.primary {
-        color: #fff;
+        color: var(--white-color);
         background-color: var(--primary);
         padding: 1rem 4rem;
     }
@@ -15,6 +15,11 @@ a {
         color: var(--primary);
         background-color: var(--medium);
         padding: 1rem 4rem;
+    }
+    &:disabled {
+        background-color: var(--light);
+        color: var(--white-color);
+        cursor: not-allowed;
     }
 }
 
@@ -59,7 +64,7 @@ a {
             margin-bottom: 2rem;
             outline: none;
             border: 0.1rem solid var(--primary);
-            background-color: #fff;
+            background-color: var(--white-color);
         }
         .paypal {
             border: 0.1rem solid var(--primary);
@@ -67,6 +72,10 @@ a {
         }
     }
     .summary {
+        ul {
+            max-height: 30rem;
+            overflow: auto;
+        }
         color: var(--primary);
         h4 {
             font-size: 1.5rem;
@@ -133,4 +142,26 @@ a {
             width: 100%;
         }
     }
+}
+
+//SCROLLBAR SCSS
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: var(--light);
 }

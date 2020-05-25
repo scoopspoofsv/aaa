@@ -1,11 +1,12 @@
 <header class="header" (clickElsewhere)="loadCart()">
     <nav class="container">
-        <ul fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-end center" fxLayoutAlign.lt-md="center center" fxLayoutGap="4rem" fxLayoutGap.lt-sm="1rem">
+        <ul fxLayout="row" fxLayout.lt-sm="row" fxLayoutAlign="flex-end center" fxLayoutAlign.lt-md="center center" fxLayoutGap="4rem" fxLayoutGap.lt-sm="2rem">
             <li><a class="nav-link" [routerLink]="['']">Home</a></li>
             <li><a class="nav-link" [routerLink]="['/about']">About</a></li>
             <li><a class="nav-link" [routerLink]="['/shop']">Shop</a></li>
             <li><a class="nav-link" [routerLink]="['/help']">Help</a></li>
             <li><a class="cart" [routerLink]="['/cart-main']"><i class="fas fa-shopping-cart"></i>{{ totalItems }}</a></li>
+            <li><a (click)="toggleTheme()"><i class="fas fa-adjust"></i><span>{{ isDarkMode ? "Go Light" : "Go Dark" }}</span></a></li>
         </ul>
     </nav>
 </header>

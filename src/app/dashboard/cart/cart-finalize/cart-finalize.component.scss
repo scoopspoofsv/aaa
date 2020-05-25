@@ -7,7 +7,7 @@ h2 {
 a {
     cursor: pointer;
     &.primary {
-        color: #fff;
+        color: var(--white-color);
         background-color: var(--primary);
         padding: 1.5rem 4rem;
     }
@@ -20,6 +20,7 @@ a {
     p {
         width: 50%;
         margin: 0 auto 4rem auto;
+        color: var(--black-color);
     }
 }
 

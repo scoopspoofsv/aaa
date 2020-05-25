@@ -87,6 +87,10 @@
             <p>taxes</p>
             <p>{{ total/20 | currency:'USD':'symbol':'2.2'}}</p>
         </div>
+        <div class="coupon-discount lead" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="couponApplied">
+            <p><i class="fas fa-check-square"></i> Coupon Discount</p>
+            <p>-{{ couponDiscount | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
         <div class="bottom-line lead"></div>
         <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
             <h3>TOTAL</h3>
@@ -97,5 +101,5 @@
 
 <div class="container" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
     <button class="primary" [routerLink]="['/cart-payment']" [disabled]="customerForm.invalid" skipLocationChange>Next</button>
-    <button class="light" [routerLink]="['/cart-main']">Back</button>
+    <button class="primary" [routerLink]="['/cart-main']">Back</button>
 </div>

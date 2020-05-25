@@ -17,6 +17,7 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     font-size: 1.6rem;
+    background-color: var(--white-color);
 }
 
 a {
@@ -27,6 +28,13 @@ a {
 
 li {
     list-style: none;
+}
+
+input {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border: none;
+    border-bottom: 0.1rem solid var(--primary);
 }
 
 .container {

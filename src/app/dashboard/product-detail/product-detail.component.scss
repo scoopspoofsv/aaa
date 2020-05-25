@@ -13,7 +13,10 @@
             padding: 1rem;
             font-size: 2rem;
             width: 30%;
-            background-color: #fff;
+            background-color: var(--white-color);
+            color: var(--black-color);
+            border-color: var(--primary);
+            cursor: pointer;
         }
         .rating {
             span {
@@ -27,7 +30,7 @@
     }
     .cart {
         background-color: var(--primary);
-        color: #fff;
+        color: var(--white-color);
         padding: 1rem 2rem;
         font-size: 2rem;
         cursor: pointer;

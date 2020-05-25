@@ -15,7 +15,7 @@
                     <a (click)="addItem(product.productId - 1)">Add to Cart</a>
                 </div>
                 <div class="description">
-                    <h3><a [routerLink]="['/products/',product.productId]" skipLocationChange>{{ product.productName }}</a></h3>
+                    <h3><a [routerLink]="['/products/',product.productId]">{{ product.productName }}</a></h3>
                     <app-star [rating]="product.starRating"></app-star>
                     <p>{{ product.price | currency:'USD':'symbol':'2.2'}}</p>
                 </div>

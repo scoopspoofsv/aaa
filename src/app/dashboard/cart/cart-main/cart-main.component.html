@@ -32,7 +32,7 @@
         </div>
     </ng-template>
 
-    <div class="summary" fxFlex="30%" fxFlex.lt-md="100%">
+    <div class="summary" fxFlex="30%" fxFlex.lt-md="100%" *ngIf="items && items.length">
         <h3 class="lead">Summary</h3>
         <div class="bottom-line lead"></div>
         <h4 class="lead">{{ couponApplied == false ? "Buying first time? Use code firstbuy and avail $50 instant discount!" : "Coupon Successfully applied!"}}</h4>
@@ -55,6 +55,10 @@
             <p>taxes</p>
             <p>{{ total/20 | currency:'USD':'symbol':'2.2'}}</p>
         </div>
+        <div class="coupon-discount lead" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="couponApplied">
+            <p><i class="fas fa-check-square"></i> Coupon Discount</p>
+            <p>-{{ couponDiscount | currency:'USD':'symbol':'2.2'}}</p>
+        </div>
         <div class="bottom-line lead"></div>
         <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
             <h3>TOTAL</h3>
@@ -67,5 +71,5 @@
 </div>
 <div class="container" fxLayoutAlign.xs="center" fxLayoutGap="2rem">
     <button class="primary" [routerLink]="['/cart-shipping']" [disabled]="items.length == 0" skipLocationChange>Next</button>
-    <button class="light" (click)="clearAll()" [disabled]="items.length == 0">Clear cart</button>
+    <button class="primary" (click)="clearAll()" [disabled]="items.length == 0">Clear cart</button>
 </div>
