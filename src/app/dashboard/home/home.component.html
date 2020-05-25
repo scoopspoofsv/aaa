@@ -8,6 +8,9 @@
     </div>
     <div class="container">
         <h2>Product Listing</h2>
+        <div *ngIf="added" class="notification">
+            <p><i class="fas fa-check-circle"></i> 1 item successfully added to cart!</p>
+        </div>
         <ul fxLayout="row wrap" fxLayoutAlign="space-between flex-start">
             <li *ngFor="let product of filteredProducts" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="2rem" fxFlex="{{ 100 / 3 - 2 }}" fxFlex.sm="{{ 100 / 2 - 2 }}" fxFlex.lt-sm="100%">
                 <div class="image">

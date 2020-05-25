@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import * as data from "../../../api/products/products.json";
 import { Product } from "../../common/interfaces/product.entity";
 import { ProductService } from 'src/app/common/services/product.service';
 import { Item } from 'src/app/common/interfaces/item';
+import { Subscription, Observable, timer } from 'rxjs';
+
 
 
 @Component({
@@ -19,6 +20,10 @@ export class HomeComponent implements OnInit {
   items: Item[] = [];
   errorMessage: string;
   total: number = 0;
+  added: boolean = false;
+
+  private subscription: Subscription;
+  private timer: Observable<any>;
 
 
   _listFilter: string;
@@ -90,6 +95,7 @@ export class HomeComponent implements OnInit {
       },
       error: (err) => (this.errorMessage = err),
     });
+    this.showNotification();
   }
 
   loadCart(): void {
@@ -104,5 +110,14 @@ export class HomeComponent implements OnInit {
 			});
       this.total += item.product.price * item.quantity;
 		}
-	}
+  }
+
+  showNotification(): void{
+    this.added = true;
+    this.timer = timer(1000);
+    this.subscription = this.timer.subscribe(() => {
+      // set showloader to false to hide loading div from view after 5 seconds
+      this.added = false;
+  });
+  }
 }

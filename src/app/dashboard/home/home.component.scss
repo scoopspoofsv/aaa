@@ -24,6 +24,20 @@ h2 {
     margin-bottom: 2rem;
 }
 
+.container {
+    position: relative;
+}
+
+.notification {
+    position: absolute;
+    top: 0;
+    p {
+        padding: 1rem;
+        background-color: var(--primary);
+        color: var(--white-color);
+    }
+}
+
 ul {
     margin-top: 2rem;
     p {
