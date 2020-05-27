@@ -36,6 +36,12 @@ h2 {
         background-color: var(--primary);
         color: var(--white-color);
     }
+    .progress-line {
+        width: 0.6rem;
+        height: 0.6rem;
+        background: var(--light);
+        animation: progress 1s forwards ease;
+    }
 }
 
 ul {
@@ -89,6 +95,12 @@ ul {
                 }
             }
         }
+    }
+}
+
+@keyframes progress {
+    to {
+        width: 100%;
     }
 }
 

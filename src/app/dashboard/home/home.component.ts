@@ -116,7 +116,7 @@ export class HomeComponent implements OnInit {
     this.added = true;
     this.timer = timer(1000);
     this.subscription = this.timer.subscribe(() => {
-      // set showloader to false to hide loading div from view after 5 seconds
+
       this.added = false;
   });
   }
